@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>;]</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-2xuqBmRU+1ЯnKuh+Yo1+MPfhY5lQ7WeSX+wnE7wBnXd/8fyq7WA8fW+t/2455yQ5Yq+5867083x8Q807/628" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+  <div class="container">
+    <h1>Health Tracker w/ ML</h1>
+    <form id="wellnessForm">
+
+      <div class="form-group">
+        <label>Select all that you have taken since last submission</label>
+
+        <div>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('abilify')">Abilify</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('cannabis')">Cannabis</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('bupropion')">Buproprion</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('propanolol')">Propanolol</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('dextroamph')">DextroAmph</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('lsd')">lsd</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('n2o')">n20</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('molly')">molly</button>
+          <button type="button" autocomplete="off" aria-pressed="false"onclick="toggleActivity('Psilocybin')">psilocybin</button>
+          <button type="button" autocomplete="off" aria-pressed="false"onclick="toggleActivity('Research psychs')">Research psychs</button>
+          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('Cocaine')">Cocaine</button>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Mental Wellness</label>
+        <input type="range" min="1" max="100" value="3" id="mentalWellnessSlider" class="slider">
+        <label for="mentalWellnessSlider" class="slider-label">Current Mental Wellness Level (1 - Low, 100 - High)</label>
+      </div>
+
+      <div class="form-group">
+        <label>Physical Wellness</label>
+        <input type="range" min="1" max="100" value="3" id="physicalWellnessSlider" class="slider">
+        <label for="physicalWellnessSlider" class="slider-label">Current Physical Wellness Level (1 - Low, 100 - High)</label>
+      </div>
+
+      <button type="button" class="btn" onclick="onSubmit()">Submit</button>
+    </form>
+  </div>
+
+  <script>
+
+    function toggleActivity(activity, button) {
+      button.classList.toggle('active');
+      // Add your existing toggleActivity function logic here
+  }
+  
+
+</script>
+  
