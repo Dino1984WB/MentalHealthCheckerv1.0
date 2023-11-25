@@ -15,17 +15,18 @@
         <label>Select all that you have taken since last submission</label>
 
         <div>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('abilify')">Abilify</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('cannabis')">Cannabis</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('bupropion')">Buproprion</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('propanolol')">Propanolol</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('dextroamph')">DextroAmph</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('lsd')">lsd</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('n2o')">n20</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('molly')">molly</button>
-          <button type="button" autocomplete="off" aria-pressed="false"onclick="toggleActivity('Psilocybin')">psilocybin</button>
-          <button type="button" autocomplete="off" aria-pressed="false"onclick="toggleActivity('Research psychs')">Research psychs</button>
-          <button type="button" autocomplete="off" aria-pressed="false" onclick="toggleActivity('Cocaine')">Cocaine</button>
+          <button type="button" id='abilify'    autocomplete="off" aria-pressed="false" onclick="toggleActivity('abilify')">Abilify</button>
+          <button type="button" id='cannabis'   autocomplete="off" aria-pressed="false" onclick="toggleActivity('cannabis')">Cannabis</button>
+          <button type="button" id='bupropion'  autocomplete="off" aria-pressed="false" onclick="toggleActivity('bupropion')">Buproprion</button>
+          <button type="button" id='propanolol' autocomplete="off" aria-pressed="false" onclick="toggleActivity('propanolol')">Propanolol</button>
+          <button type="button" id='dextroamph' autocomplete="off" aria-pressed="false" onclick="toggleActivity('dextroamph')">DextroAmph</button>
+          <button type="button" id='lsd'        autocomplete="off" aria-pressed="false" onclick="toggleActivity('lsd')">lsd</button>
+          <button type="button" id='n2o'        autocomplete="off" aria-pressed="false" onclick="toggleActivity('n2o')">n20</button>
+          <button type="button" id='molly'      autocomplete="off" aria-pressed="false" onclick="toggleActivity('molly')">molly</button>
+          <button type="button" id='psilocybin' autocomplete="off" aria-pressed="false"onclick="toggleActivity('Psilocybin')">psilocybin</button>
+          <button type="button" id='research_psych' autocomplete="off" aria-pressed="false"onclick="toggleActivity('Research psychs')">Research psychs</button>
+          <button type="button" id='research_stim'    autocomplete="off" aria-pressed="false" onclick="toggleActivity('Cocaine')">Cocaine</button>
+          <button type="button" id='cocaine'    autocomplete="off" aria-pressed="false" onclick="toggleActivity('Cocaine')">Cocaine</button>
         </div>
       </div>
 
@@ -51,7 +52,56 @@
       button.classList.toggle('active');
       // Add your existing toggleActivity function logic here
   }
-  
+
+  // Define a function to make a GET request
+    function fetchData() {
+      var xhr = new XMLHttpRequest();
+
+      // Replace 'http://localhost:5000/api/data' with your actual backend API endpoint
+      xhr.open('GET', 'http://localhost:5000/api/data', true);
+
+      xhr.onload = function () {
+          if (xhr.status == 200) {
+            }
+              // Replace 'data-container' with the ID of the element you want to update
+              document.getElementById('abilify').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('cannabis').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('burpropion').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('propanolol').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('dextroamph').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('lsd').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('n2o').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('molly').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('psilocybin').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('research_psych').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('research_stim').innerText = JSON.parse(xhr.responseText).message;
+              document.getElementById('cocaine').innerText = JSON.parse(xhr.responseText).message;
+              
+
+
+          }
+      };
+
+      xhr.send();
+    
+
+// Call the fetchData function when the page loads
+      window.onload = function () {
+          fetchData();
+};
+
+
+
+/** 
+    TODO: we need to get all the buttons to stay active and all of themn to have the capacity to remain active at the same
+    time. There must be some attribute that exists for html buttons that allows for this. 
+
+**/
 
 </script>
-  
+
+
+/** 
+
+
+**/
